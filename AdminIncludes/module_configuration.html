@@ -1,0 +1,110 @@
+
+<div class="general-block-decorator">
+    <div class="row">
+        <div class="form-container">
+            <div class="col-md-12 title title-without-tabs">
+                {intl d='twitter.ai' l='Edit your twitter configuration.'}
+            </div>
+            <div class="col-md-12">
+                <p>{intl d='twitter.ai' l='How to retrieve your Twitter consumer credentials'}</p>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="general-block-decorator">
+    <div class="row">
+        <div class="form-container">
+            <div class="col-md-12">
+                {form name="twitter.configuration"}
+                    {if $form_error_message}<div class="alert alert-danger">{$form_error_message}</div>{/if}
+
+                    <form method="POST" id="twitter-form" action="{url path="/admin/module/Twitter/save"}" {form_enctype form=$form} class="clearfix">
+
+                    {form_hidden_fields form=$form}
+
+                    {form_field form=$form field='consumer_key'}
+                        <div class="form-group{if $error} has-error{/if}">
+                            <label class="control-label" for="{$label_attr.for}">
+                                {$label}
+                                <span class="required">*</span>
+                                {form_error form=$form field="consumer_key"}
+                                    <br />
+                                    <span class="error">{$message}</span>
+                                {/form_error}
+                            </label>
+                            <span class="label-help-block">{$label_attr.help}</span>
+                            <input id="twitter_config-id-consumer_key" class="form-control " type="text" required="" aria-required="true" value="{$value}" name="{$name}">
+                        </div>
+                    {/form_field}
+
+                    {form_field form=$form field='consumer_secret'}
+                        <div class="form-group{if $error} has-error{/if}">
+                            <label class="control-label" for="{$label_attr.for}">
+                                {$label}
+                                <span class="required">*</span>
+                                {form_error form=$form field="consumer_secret"}
+                                    <br />
+                                    <span class="error">{$message}</span>
+                                {/form_error}
+                            </label>
+                            <span class="label-help-block">{$label_attr.help}</span>
+                            <input id="twitter_config-id-consumer_secret" class="form-control " type="text" required="" aria-required="true" value="{$value}" name="{$name}">
+                        </div>
+                    {/form_field}
+
+                    {form_field form=$form field='screen_name'}
+                        <div class="form-group{if $error} has-error{/if}">
+                            <label class="control-label" for="{$label_attr.for}">
+                                {$label}
+                                <span class="required">*</span>
+                                {form_error form=$form field="screen_name"}
+                                    <br />
+                                    <span class="error">{$message}</span>
+                                {/form_error}
+                            </label>
+                            <span class="label-help-block">{$label_attr.help}</span>
+                            <input id="twitter_config-id-screen_name" class="form-control " type="text" required="" aria-required="true" value="{$value}" name="{$name}">
+                        </div>
+                    {/form_field}
+
+                    {form_field form=$form field='count'}
+                        <div class="form-group{if $error} has-error{/if}">
+                            <label class="control-label" for="{$label_attr.for}">
+                            {$label}
+                            <span class="required">*</span>
+                                {form_error form=$form field="count"}
+                                    <br />
+                                    <span class="error">{$message}</span>
+                                {/form_error}
+                            </label>
+                            <span class="label-help-block">{$label_attr.help}</span>
+                            <input id="twitter_config-id-count" class="form-control " type="text" value="{$value}" name="{$name}">
+                        </div>
+                    {/form_field}
+
+                    {form_field form=$form field='cache_lifetime'}
+                        <div class="form-group{if $error} has-error{/if}">
+                            <label class="control-label" for="{$label_attr.for}">
+                                {$label}
+                                <span class="required">*</span>
+                                {form_error form=$form field="cache_lifetime"}
+                                    <br />
+                                    <span class="error">{$message}</span>
+                                {/form_error}
+                            </label>
+                            <span class="label-help-block">{$label_attr.help}</span>
+                            <input id="twitter_config-id-cache_lifetime" class="form-control " type="text" value="{$value}" name="{$name}">
+                        </div>
+                    {/form_field}
+
+                    <button type="submit" id="twitter-save" name="twitter_save" value="save" class="form-submit-button btn btn-sm btn-default" title="{intl d='twitter.ai' l='Save'}">
+                        {intl d='twitter.ai' l='Save'}
+                    </button>
+                </form>
+                {/form}
+            </div>
+
+        </div>
+
+    </div>
+</div>

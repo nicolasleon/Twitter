@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<routes xmlns="http://symfony.com/schema/routing"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://symfony.com/schema/routing http://symfony.com/schema/routing/routing-1.0.xsd">
+
+
+    <route id="twitter.save.config" path="/admin/module/Twitter/save" methods="POST">
+        <default key="_controller">Twitter\Controller\ConfigurationController::saveAction</default>
+    </route>
+    <!--
+
+    if a /admin/module/twitter/ route is provided, a "Configuration" button will be displayed
+    for the module in the module list. Clicking this button will invoke this route.
+
+    <route id="twitter.setup" path="/admin/module/twitter">
+        <default key="_controller">Twitter\Controller\ConfigurationController::setup</default>
+    </route>
+
+    <route id="my_route_id" path="/admin/module/twitter/route-name">
+        <default key="_controller">Twitter\Full\Class\Name\Of\YourAdminController::methodName</default>
+    </route>
+
+    <route id="my_route_id" path="/my/route/name">
+        <default key="_controller">Twitter\Full\Class\Name\Of\YourOtherController::methodName</default>
+    </route>
+
+    ...add as many routes as required.
+
+    <route>
+    ...
+    </route>
+    -->
+
+</routes>
